@@ -55,11 +55,12 @@ def obter_tabela(nome):
     if comparacoes is None:
         return jsonify({"erro": "comparações não encontradas"}), 404
 
-    elementos = sorted({
-        item
-        for par in comparacoes.keys()
-        for item in par
-    })
+    elementos = []
+
+    for par in comparacoes.keys():
+        for item in par:
+            if item not in elementos:
+                elementos.append(item)
 
     compare = ahpy.Compare(
         name=nome,
