@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AHP</title>
+  <link rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>AHP</h1>
+    </div>
+    <label class="file-button">
+      Carregar .py
+      <input id="fileInput" type="file" accept=".py" multiple>
+    </label>
+  </header>
+
+  <main class="layout">
+    <section class="panel controls">
+      <label for="tableSelect">Tabela</label>
+      <select id="tableSelect"></select>
+
+      <div class="status" id="loadStatus">Carregando tabelas...</div>
+
+      <hr>
+
+      <h2>Editar peso</h2>
+
+      <label for="rowSelect">Linha</label>
+      <select id="rowSelect"></select>
+
+      <label for="colSelect">Coluna</label>
+      <select id="colSelect"></select>
+
+      <label for="weightSelect">Peso Saaty</label>
+      <select id="weightSelect"></select>
+
+      <button id="applyButton" type="button">Aplicar peso</button>
+  
+      
+    </section>
+
+    <section class="panel matrix-panel">
+      <div class="section-header">
+        <h2>Matriz</h2>
+        <span id="tableInfo"></span>
+      </div>
+      <div id="matrixWrap" class="matrix-wrap"></div>
+    </section>
+
+    <section class="panel results">
+      <div class="section-header">
+        <h2>Resultados</h2>
+        <strong id="crValue">CR: -</strong>
+      </div>
+      <div id="weightsList" class="weights-list"></div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
