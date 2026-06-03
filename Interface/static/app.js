@@ -6,9 +6,6 @@ const VALORES_SAATY = [
   ["7", 7], ["8", 8], ["9", 9]
 ];
 
-
-
-
 //armazenar informações da aplicação
 const estado = {
   currentName: "",   //nome atual
@@ -172,7 +169,7 @@ function renderCurrentTable() {
 
   elementos.tableInfo.textContent = `${table.fileName} - ${table.elements.length} itens`;
   renderMatrix(table);
-  renderResults(table);
+  renderResults(table.weights, table.cr, table.elements);
 }
 
 async function applySelectedWeight() {
@@ -247,7 +244,8 @@ estado.changedCells.add(`${col}|||${row}`);
 
   renderResults(
     resultado.weights,
-    resultado.cr
+    resultado.cr,
+    estado.currentTable.elementos
   );
 }
 
@@ -367,13 +365,17 @@ function renderMatrix(data) {
         </table>
     `;
 }
-function renderResults(weights, cr) {
+function renderResults(weights, cr, order) {
 
     elementos.crValue.textContent =
         `CR: ${cr}`;
 
+    const entries = (order ?? Object.keys(weights))
+        .filter(nome => weights[nome] !== undefined)
+        .map(nome => [nome, weights[nome]]);
+
     elementos.weightsList.innerHTML =
-        Object.entries(weights)
+        entries
         .map(([nome, peso]) => `
 
             <div class="weight-row">
@@ -425,7 +427,8 @@ async function loadTable(nome) {
 
     renderResults(
         data.weights,
-        data.cr
+        data.cr,
+        data.elementos
     );
 }
 
@@ -455,4 +458,3 @@ async function start() {
 }
 
 start();
-
