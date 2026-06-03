@@ -5,7 +5,6 @@ import numpy as np
 #local_weights: Prioridades relativas ao pai ou mãe imediato na hierarquia.
 #global_weights: Prioridades de critérios ou subcritérios relativos ao objetivo raiz.
 
-
 C9_comparisons = {
 
     ('residências acima do encosta', 'residências acima do encosta'): 1,
@@ -14,10 +13,10 @@ C9_comparisons = {
 
     ('residências abaixo do encosta', 'residências acima do encosta'): 1,
     ('residências abaixo do encosta', 'residências abaixo do encosta'): 1,
-    ('residências abaixo do encosta', 'residências entre encostas'): 1,
+    ('residências abaixo do encosta', 'residências entre encostas'): 1/5,
 
     ('residências entre encostas', 'residências acima do encosta'): 7,
-    ('residências entre encostas', 'residências abaixo do encosta'): 1,
+    ('residências entre encostas', 'residências abaixo do encosta'): 5,
     ('residências entre encostas', 'residências entre encostas'): 1,
 
 }
@@ -47,12 +46,12 @@ def debug_linhas(compare):
         print(f'  target_weight ahpy: {compare.target_weights[elemento_linha]:.3f}')
 
 
-C7 = ahpy.Compare(name='C7', comparisons=C9_comparisons, precision=3, random_index='saaty')
+C9 = ahpy.Compare(name='C9', comparisons=C9_comparisons, precision=3, random_index='saaty')
 
 print('TARGET WEIGHTS')
-print(C7.target_weights)
+print(C9.target_weights)
 
 print('\nCONSISTENCY RATIO')
-print(C7.consistency_ratio)
+print(C9.consistency_ratio)
 
-#debug_linhas(C7)
+#debug_linhas(C9)

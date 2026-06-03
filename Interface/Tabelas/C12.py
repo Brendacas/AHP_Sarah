@@ -11,14 +11,14 @@ import numpy as np
 C12_comparisons = {
 
     ('Convexa', 'Convexa'): 1,
-    ('Convexa', 'Planar'): 3,
-    ('Convexa', 'Côncava'): 5,
+    ('Convexa', 'Planar'): 1/3,
+    ('Convexa', 'Côncava'): 1/5,
 
-    ('Planar', 'Convexa'): 1/3,
+    ('Planar', 'Convexa'): 3,
     ('Planar', 'Planar'): 1,
     ('Planar', 'Côncava'): 1/3,
 
-    ('Côncava', 'Convexa'): 1/5,
+    ('Côncava', 'Convexa'): 5,
     ('Côncava', 'Planar'): 3,
     ('Côncava', 'Côncava'): 1,
 
@@ -49,12 +49,12 @@ def debug_linhas(compare):
         print(f'  target_weight ahpy: {compare.target_weights[elemento_linha]:.3f}')
 
 
-C7 = ahpy.Compare(name='C7', comparisons=C12_comparisons, precision=3, random_index='saaty')
+C12 = ahpy.Compare(name='C12', comparisons=C12_comparisons, precision=3, random_index='saaty')
 
 print('TARGET WEIGHTS')
-print(C7.target_weights)
+print(C12.target_weights)
 
 print('\nCONSISTENCY RATIO')
-print(C7.consistency_ratio)
+print(C12.consistency_ratio)
 
-#debug_linhas(C7)
+#debug_linhas(C12)

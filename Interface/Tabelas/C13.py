@@ -9,26 +9,27 @@ import numpy as np
 C13_comparisons = {
 
     ('entre 0° e 17°', 'entre 0° e 17°'): 1,
-    ('entre 0° e 17°', 'entre 17,1° e 45°'): 1/6,
-    ('entre 0° e 17°', 'entre 45,1° e 60°'): 1/7,
-    ('entre 0° e 17°', 'entre 60,1° e 90°'): 1/9,
+    ('entre 0° e 17°', 'entre 17,1° e 45°'): 1/3,
+    ('entre 0° e 17°', 'entre 45,1° e 60°'): 1/5,
+    ('entre 0° e 17°', 'entre 60,1° e 90°'): 1/7,
 
-    ('entre 17,1° e 45°', 'entre 0° e 17°'): 6,
+    ('entre 17,1° e 45°', 'entre 0° e 17°'): 3,
     ('entre 17,1° e 45°', 'entre 17,1° e 45°'): 1,
-    ('entre 17,1° e 45°', 'entre 45,1° e 60°'): 1/5,
-    ('entre 17,1° e 45°', 'entre 60,1° e 90°'): 1/7,
+    ('entre 17,1° e 45°', 'entre 45,1° e 60°'): 1/3,
+    ('entre 17,1° e 45°', 'entre 60,1° e 90°'): 1/5,
 
-    ('entre 45,1° e 60°', 'entre 0° e 17°'): 7,
-    ('entre 45,1° e 60°', 'entre 17,1° e 45°'): 5,
+    ('entre 45,1° e 60°', 'entre 0° e 17°'): 5,
+    ('entre 45,1° e 60°', 'entre 17,1° e 45°'): 3,
     ('entre 45,1° e 60°', 'entre 45,1° e 60°'): 1,
-    ('entre 45,1° e 60°', 'entre 60,1° e 90°'): 1/5,
+    ('entre 45,1° e 60°', 'entre 60,1° e 90°'): 1/3,
 
-    ('entre 60,1° e 90°', 'entre 0° e 17°'): 9,
-    ('entre 60,1° e 90°', 'entre 17,1° e 45°'): 7,
-    ('entre 60,1° e 90°', 'entre 45,1° e 60°'): 5,
+    ('entre 60,1° e 90°', 'entre 0° e 17°'): 7,
+    ('entre 60,1° e 90°', 'entre 17,1° e 45°'): 5,
+    ('entre 60,1° e 90°', 'entre 45,1° e 60°'): 3,
     ('entre 60,1° e 90°', 'entre 60,1° e 90°'): 1,
 
 }
+
 def debug_linhas(compare):
     elementos = compare._elements
     matriz = compare._matrix
@@ -54,12 +55,12 @@ def debug_linhas(compare):
         print(f'  target_weight ahpy: {compare.target_weights[elemento_linha]:.3f}')
 
 
-C7 = ahpy.Compare(name='C7', comparisons=C13_comparisons, precision=3, random_index='saaty')
+C13 = ahpy.Compare(name='C13', comparisons=C13_comparisons, precision=3, random_index='saaty')
 
 print('TARGET WEIGHTS')
-print(C7.target_weights)
+print(C13.target_weights)
 
 print('\nCONSISTENCY RATIO')
-print(C7.consistency_ratio)
+print(C13.consistency_ratio)
 
-#debug_linhas(C7)
+#debug_linhas(C13)

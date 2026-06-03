@@ -1,6 +1,7 @@
 import ahpy
 
 
+
 B4_comparisons = {
 
     ('Drenagem de águas pluviais:', 'Drenagem de águas pluviais:'): 1,
@@ -10,7 +11,7 @@ B4_comparisons = {
     ('Infiltrações no solo:', 'Infiltrações no solo:'): 1,
 
 }
-compara = ahpy.Compare(name='A', comparisons=B4_comparisons, precision=3, random_index='saaty')
+B4 = ahpy.Compare(name='B4', comparisons=B4_comparisons, precision=3, random_index='saaty')
 
 def debug_linhas(compare):
     elementos = compare._elements
@@ -40,13 +41,13 @@ def debug_linhas(compare):
 
 
 print('TARGET WEIGHTS')
-print(compara.target_weights)
+print(B4.target_weights)
 
 print('\nCONSISTENCY RATIO')
-print(compara.consistency_ratio)
+print(B4.consistency_ratio)
 
-debug_linhas(compara)
+debug_linhas(B4)
 
 
 
-report = compara.report(show=True)
+report = B4.report(show=True)

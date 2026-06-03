@@ -8,15 +8,15 @@ import numpy as np
 C7_comparisons = {
 
     ('Fossa', 'Fossa'): 1,
-    ('Fossa', 'Despejo direto na encosta'): 1/6,
-    ('Fossa', 'Conectada à rede de drenagem/esgoto'): 1/9,
+    ('Fossa', 'Despejo direto na encosta'): 1/5,
+    ('Fossa', 'Conectada à rede de drenagem/esgoto'): 3,
 
-    ('Despejo direto na encosta', 'Fossa'): 6,
+    ('Despejo direto na encosta', 'Fossa'): 5,
     ('Despejo direto na encosta', 'Despejo direto na encosta'): 1,
-    ('Despejo direto na encosta', 'Conectada à rede de drenagem/esgoto'): 1/3,
+    ('Despejo direto na encosta', 'Conectada à rede de drenagem/esgoto'): 9,
 
-    ('Conectada à rede de drenagem/esgoto', 'Fossa'): 9,
-    ('Conectada à rede de drenagem/esgoto', 'Despejo direto na encosta'): 3,
+    ('Conectada à rede de drenagem/esgoto', 'Fossa'): 1/3,
+    ('Conectada à rede de drenagem/esgoto', 'Despejo direto na encosta'): 1/9,
     ('Conectada à rede de drenagem/esgoto', 'Conectada à rede de drenagem/esgoto'): 1,
 
 }

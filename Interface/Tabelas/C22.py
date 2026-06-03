@@ -4,19 +4,21 @@ import ahpy
 C22_comparisons = {
 
     ('Quase rigido: Transfere toda energia de vento ao solo', 'Quase rigido: Transfere toda energia de vento ao solo'): 1,
-    ('Quase rigido: Transfere toda energia de vento ao solo', 'Semi-flexível: Transfere parcialmente a carga de vento ao solo'): 7,
-    ('Quase rigido: Transfere toda energia de vento ao solo', 'Não há transferência de energia ao solo'): 9,
+    ('Quase rigido: Transfere toda energia de vento ao solo', 'Semi-flexível: Transfere parcialmente a carga de vento ao solo'): 5,
+    ('Quase rigido: Transfere toda energia de vento ao solo', 'Não há transferência de energia ao solo'): 7,
 
-    ('Semi-flexível: Transfere parcialmente a carga de vento ao solo', 'Quase rigido: Transfere toda energia de vento ao solo'): 1/7,
+    ('Semi-flexível: Transfere parcialmente a carga de vento ao solo', 'Quase rigido: Transfere toda energia de vento ao solo'): 1/5,
     ('Semi-flexível: Transfere parcialmente a carga de vento ao solo', 'Semi-flexível: Transfere parcialmente a carga de vento ao solo'): 1,
-    ('Semi-flexível: Transfere parcialmente a carga de vento ao solo', 'Não há transferência de energia ao solo'): 7,
+    ('Semi-flexível: Transfere parcialmente a carga de vento ao solo', 'Não há transferência de energia ao solo'): 3,
 
-    ('Não há transferência de energia ao solo', 'Quase rigido: Transfere toda energia de vento ao solo'): 1/9,
-    ('Não há transferência de energia ao solo', 'Semi-flexível: Transfere parcialmente a carga de vento ao solo'): 1/7,
+    ('Não há transferência de energia ao solo', 'Quase rigido: Transfere toda energia de vento ao solo'): 1/7,
+    ('Não há transferência de energia ao solo', 'Semi-flexível: Transfere parcialmente a carga de vento ao solo'): 1/3,
     ('Não há transferência de energia ao solo', 'Não há transferência de energia ao solo'): 1,
 
 }
-compara = ahpy.Compare(name='A', comparisons=C22_comparisons, precision=3, random_index='saaty')
+
+
+C22 = ahpy.Compare(name='A', comparisons=C22_comparisons, precision=3, random_index='saaty')
 
 def debug_linhas(compare):
     elementos = compare._elements
@@ -46,13 +48,13 @@ def debug_linhas(compare):
 
 
 print('TARGET WEIGHTS')
-print(compara.target_weights)
+print(C22.target_weights)
 
 print('\nCONSISTENCY RATIO')
-print(compara.consistency_ratio)
+print(C22.consistency_ratio)
 
-debug_linhas(compara)
+debug_linhas(C22)
 
 
 
-report = compara.report(show=True)
+report = C22.report(show=True)

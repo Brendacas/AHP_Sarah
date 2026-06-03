@@ -4,25 +4,27 @@ import ahpy
 C6_comparisons = {
 
     ('Encanada', 'Encanada'): 1,
-    ('Encanada', 'Poço Artesiano'): 9,
-    ('Encanada', 'Cisterna de Captação de Água da Chuva'): 7,
+    ('Encanada', 'Poço Artesiano'): 1/9,
+    ('Encanada', 'Cisterna de Captação de Água da Chuva'): 1/2,
 
-    ('Poço Artesiano', 'Encanada'): 1/9,
+    ('Poço Artesiano', 'Encanada'): 9,
     ('Poço Artesiano', 'Poço Artesiano'): 1,
-    ('Poço Artesiano', 'Cisterna de Captação de Água da Chuva'): 1/7,
+    ('Poço Artesiano', 'Cisterna de Captação de Água da Chuva'): 9,
 
-    ('Cisterna de Captação de Água da Chuva', 'Encanada'): 1/7,
-    ('Cisterna de Captação de Água da Chuva', 'Poço Artesiano'): 7,
+    ('Cisterna de Captação de Água da Chuva', 'Encanada'): 2,
+    ('Cisterna de Captação de Água da Chuva', 'Poço Artesiano'): 1/9,
     ('Cisterna de Captação de Água da Chuva', 'Cisterna de Captação de Água da Chuva'): 1,
 
 }
 
-C2 = ahpy.Compare(name='A', comparisons=C6_comparisons, precision=3, random_index='saaty')
 
-print(C2.target_weights)
-print(C2.consistency_ratio)
 
-#report = C2.report(show=True)
+C6 = ahpy.Compare(name='C6', comparisons=C6_comparisons, precision=3, random_index='saaty')
+
+print(C6.target_weights)
+print(C6.consistency_ratio)
+
+#report = C6.report(show=True)
 
 
 def debug_linhas(compare):
@@ -50,4 +52,4 @@ def debug_linhas(compare):
         print(f'  target_weight ahpy: {compare.target_weights[elemento_linha]:.3f}')
 
 
-#debug_linhas(C2)
+#debug_linhas(C6)

@@ -4,37 +4,38 @@ import ahpy
 B5_comparisons = {
 
     ('Presença de Vegetação:', 'Presença de Vegetação:'): 1,
-    ('Presença de Vegetação:', 'Sitema radicular da vegetação'): 5/1,
-    ('Presença de Vegetação:', 'Tipo de vegetação Presente:'): 5/1,
-    ('Presença de Vegetação:', 'Ação do vento sobre as árvores:'): 5/1,
-    ('Presença de Vegetação:', 'Impacto da Vegetação no solo:'): 5/1,
+    ('Presença de Vegetação:', 'Sitema radicular da vegetação'): 1/3,
+    ('Presença de Vegetação:', 'Tipo de vegetação Presente:'): 1/3,
+    ('Presença de Vegetação:', 'Ação do vento sobre as árvores:'): 1/5,
+    ('Presença de Vegetação:', 'Impacto da Vegetação no solo:'): 1/9,
 
-    ('Sitema radicular da vegetação', 'Presença de Vegetação:'): 1/5,
+    ('Sitema radicular da vegetação', 'Presença de Vegetação:'): 3,
     ('Sitema radicular da vegetação', 'Sitema radicular da vegetação'): 1,
     ('Sitema radicular da vegetação', 'Tipo de vegetação Presente:'): 3,
     ('Sitema radicular da vegetação', 'Ação do vento sobre as árvores:'): 1/3,
     ('Sitema radicular da vegetação', 'Impacto da Vegetação no solo:'): 1/5,
 
-    ('Tipo de vegetação Presente:', 'Presença de Vegetação:'): 1/5,
+    ('Tipo de vegetação Presente:', 'Presença de Vegetação:'): 3,
     ('Tipo de vegetação Presente:', 'Sitema radicular da vegetação'): 1/3,
     ('Tipo de vegetação Presente:', 'Tipo de vegetação Presente:'): 1,
     ('Tipo de vegetação Presente:', 'Ação do vento sobre as árvores:'): 1/3,
     ('Tipo de vegetação Presente:', 'Impacto da Vegetação no solo:'): 1/5,
 
-    ('Ação do vento sobre as árvores:', 'Presença de Vegetação:'): 1/5,
-    ('Ação do vento sobre as árvores:', 'Sitema radicular da vegetação'): 1/3,
+    ('Ação do vento sobre as árvores:', 'Presença de Vegetação:'): 5,
+    ('Ação do vento sobre as árvores:', 'Sitema radicular da vegetação'): 3,
     ('Ação do vento sobre as árvores:', 'Tipo de vegetação Presente:'): 3,
     ('Ação do vento sobre as árvores:', 'Ação do vento sobre as árvores:'): 1,
     ('Ação do vento sobre as árvores:', 'Impacto da Vegetação no solo:'): 1/5,
 
-    ('Impacto da Vegetação no solo:', 'Presença de Vegetação:'): 1/5,
+    ('Impacto da Vegetação no solo:', 'Presença de Vegetação:'): 9,
     ('Impacto da Vegetação no solo:', 'Sitema radicular da vegetação'): 5,
     ('Impacto da Vegetação no solo:', 'Tipo de vegetação Presente:'): 5,
     ('Impacto da Vegetação no solo:', 'Ação do vento sobre as árvores:'): 5,
     ('Impacto da Vegetação no solo:', 'Impacto da Vegetação no solo:'): 1,
 
 }
-compara = ahpy.Compare(name='A', comparisons=B5_comparisons, precision=3, random_index='saaty')
+
+B5 = ahpy.Compare(name='B5', comparisons=B5_comparisons, precision=3, random_index='saaty')
 
 def debug_linhas(compare):
     elementos = compare._elements
@@ -64,13 +65,13 @@ def debug_linhas(compare):
 
 
 print('TARGET WEIGHTS')
-print(compara.target_weights)
+print(B5.target_weights)
 
 print('\nCONSISTENCY RATIO')
-print(compara.consistency_ratio)
+print(B5.consistency_ratio)
 
-#debug_linhas(compara)
+#debug_linhas(B5)
 
 
 
-#report = compara.report(show=True)
+#report = B5.report(show=True)

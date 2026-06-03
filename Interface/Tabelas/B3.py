@@ -1,6 +1,7 @@
 import ahpy
 
 
+
 B3_comparisons = {
 
     ('Evidências de Instabilidade:', 'Evidências de Instabilidade:'): 1,
@@ -10,7 +11,7 @@ B3_comparisons = {
     ('Processos de Movimentação:', 'Processos de Movimentação:'): 1,
 
 }
-compara = ahpy.Compare(name='A', comparisons=B3_comparisons, precision=3, random_index='saaty')
+B3 = ahpy.Compare(name='B3', comparisons=B3_comparisons, precision=3, random_index='saaty')
 
 def debug_linhas(compare):
     elementos = compare._elements
@@ -40,13 +41,13 @@ def debug_linhas(compare):
 
 
 print('TARGET WEIGHTS')
-print(compara.target_weights)
+print(B3.target_weights)
 
 print('\nCONSISTENCY RATIO')
-print(compara.consistency_ratio)
+print(B3.consistency_ratio)
 
-debug_linhas(compara)
+debug_linhas(B3)
 
 
 
-report = compara.report(show=True)
+report = B3.report(show=True)

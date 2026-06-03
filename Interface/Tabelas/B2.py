@@ -5,49 +5,48 @@ B2_comparisons = {
 
     ('Posição das residências em relação ao talude:', 'Posição das residências em relação ao talude:'): 1,
     ('Posição das residências em relação ao talude:', 'Distância da casa ao talude:'): 1,
-    ('Posição das residências em relação ao talude:', 'Natureza do Talude'): 1/7,
-    ('Posição das residências em relação ao talude:', 'Curvatura da Encosta'): 1/5,
-    ('Posição das residências em relação ao talude:', 'Inclinação do Talude'): 1/7,
-    ('Posição das residências em relação ao talude:', 'Características do Material:'): 1/7,
+    ('Posição das residências em relação ao talude:', 'Natureza do Talude'): 1,
+    ('Posição das residências em relação ao talude:', 'Curvatura da Encosta'): 3,
+    ('Posição das residências em relação ao talude:', 'Inclinação do Talude'): 1/3,
+    ('Posição das residências em relação ao talude:', 'Características do Material:'): 1/3,
 
     ('Distância da casa ao talude:', 'Posição das residências em relação ao talude:'): 1,
     ('Distância da casa ao talude:', 'Distância da casa ao talude:'): 1,
-    ('Distância da casa ao talude:', 'Natureza do Talude'): 1/3,
-    ('Distância da casa ao talude:', 'Curvatura da Encosta'): 1/5,
-    ('Distância da casa ao talude:', 'Inclinação do Talude'): 1/7,
+    ('Distância da casa ao talude:', 'Natureza do Talude'): 1,
+    ('Distância da casa ao talude:', 'Curvatura da Encosta'): 2,
+    ('Distância da casa ao talude:', 'Inclinação do Talude'): 1/3,
     ('Distância da casa ao talude:', 'Características do Material:'): 1/7,
 
-    ('Natureza do Talude', 'Posição das residências em relação ao talude:'): 7,
-    ('Natureza do Talude', 'Distância da casa ao talude:'): 3,
+    ('Natureza do Talude', 'Posição das residências em relação ao talude:'): 1,
+    ('Natureza do Talude', 'Distância da casa ao talude:'): 1,
     ('Natureza do Talude', 'Natureza do Talude'): 1,
-    ('Natureza do Talude', 'Curvatura da Encosta'): 1/5,
-    ('Natureza do Talude', 'Inclinação do Talude'): 3,
+    ('Natureza do Talude', 'Curvatura da Encosta'): 2,
+    ('Natureza do Talude', 'Inclinação do Talude'): 1/3,
     ('Natureza do Talude', 'Características do Material:'): 1/5,
 
-    ('Curvatura da Encosta', 'Posição das residências em relação ao talude:'): 5,
-    ('Curvatura da Encosta', 'Distância da casa ao talude:'): 5,
-    ('Curvatura da Encosta', 'Natureza do Talude'): 5,
+    ('Curvatura da Encosta', 'Posição das residências em relação ao talude:'): 1/3,
+    ('Curvatura da Encosta', 'Distância da casa ao talude:'): 1/2,
+    ('Curvatura da Encosta', 'Natureza do Talude'): 1/2,
     ('Curvatura da Encosta', 'Curvatura da Encosta'): 1,
     ('Curvatura da Encosta', 'Inclinação do Talude'): 1/3,
     ('Curvatura da Encosta', 'Características do Material:'): 1/5,
 
-    ('Inclinação do Talude', 'Posição das residências em relação ao talude:'): 7,
-    ('Inclinação do Talude', 'Distância da casa ao talude:'): 7,
-    ('Inclinação do Talude', 'Natureza do Talude'): 1/3,
+    ('Inclinação do Talude', 'Posição das residências em relação ao talude:'): 3,
+    ('Inclinação do Talude', 'Distância da casa ao talude:'): 3,
+    ('Inclinação do Talude', 'Natureza do Talude'): 3,
     ('Inclinação do Talude', 'Curvatura da Encosta'): 3,
     ('Inclinação do Talude', 'Inclinação do Talude'): 1,
-    ('Inclinação do Talude', 'Características do Material:'): 1,
+    ('Inclinação do Talude', 'Características do Material:'): 1/9,
 
-    ('Características do Material:', 'Posição das residências em relação ao talude:'): 7,
+    ('Características do Material:', 'Posição das residências em relação ao talude:'): 3,
     ('Características do Material:', 'Distância da casa ao talude:'): 7,
     ('Características do Material:', 'Natureza do Talude'): 5,
     ('Características do Material:', 'Curvatura da Encosta'): 5,
-    ('Características do Material:', 'Inclinação do Talude'): 1,
+    ('Características do Material:', 'Inclinação do Talude'): 9,
     ('Características do Material:', 'Características do Material:'): 1,
 
 }
-
-compara = ahpy.Compare(name='A', comparisons=B2_comparisons, precision=3, random_index='saaty')
+B2 = ahpy.Compare(name='B2', comparisons=B2_comparisons, precision=3, random_index='saaty')
 
 def debug_linhas(compare):
     elementos = compare._elements
@@ -77,13 +76,13 @@ def debug_linhas(compare):
 
 
 print('TARGET WEIGHTS')
-print(compara.target_weights)
+print(B2.target_weights)
 
 print('\nCONSISTENCY RATIO')
-print(compara.consistency_ratio)
+print(B2.consistency_ratio)
 
-debug_linhas(compara)
+debug_linhas(B2)
 
 
 
-report = compara.report(show=True)
+report = B2.report(show=True)

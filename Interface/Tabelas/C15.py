@@ -6,37 +6,35 @@ import numpy as np
 #global_weights: Prioridades de critérios ou subcritérios relativos ao objetivo raiz.
 
 
-
-
 C15_comparisons = {
 
     ('Inclinação em árvores, postes e similares', 'Inclinação em árvores, postes e similares'): 1,
-    ('Inclinação em árvores, postes e similares', 'Fendas / Trincas no terreno'): 1/7,
-    ('Inclinação em árvores, postes e similares', 'Patologias nas construções'): 1/5,
-    ('Inclinação em árvores, postes e similares', 'Cicatriz de deslizamento'): 1/5,
-    ('Inclinação em árvores, postes e similares', 'Outras evidências de instabilidade'): 1/3,
+    ('Inclinação em árvores, postes e similares', 'Fendas / Trincas no terreno'): 1/5,
+    ('Inclinação em árvores, postes e similares', 'Patologias nas construções'): 1/3,
+    ('Inclinação em árvores, postes e similares', 'Cicatriz de deslizamento'): 5,
+    ('Inclinação em árvores, postes e similares', 'Outras evidências de instabilidade'): 3,
 
-    ('Fendas / Trincas no terreno', 'Inclinação em árvores, postes e similares'): 7,
+    ('Fendas / Trincas no terreno', 'Inclinação em árvores, postes e similares'): 5,
     ('Fendas / Trincas no terreno', 'Fendas / Trincas no terreno'): 1,
     ('Fendas / Trincas no terreno', 'Patologias nas construções'): 3,
-    ('Fendas / Trincas no terreno', 'Cicatriz de deslizamento'): 5,
-    ('Fendas / Trincas no terreno', 'Outras evidências de instabilidade'): 3,
+    ('Fendas / Trincas no terreno', 'Cicatriz de deslizamento'): 9,
+    ('Fendas / Trincas no terreno', 'Outras evidências de instabilidade'): 7,
 
-    ('Patologias nas construções', 'Inclinação em árvores, postes e similares'): 5,
+    ('Patologias nas construções', 'Inclinação em árvores, postes e similares'): 3,
     ('Patologias nas construções', 'Fendas / Trincas no terreno'): 1/3,
     ('Patologias nas construções', 'Patologias nas construções'): 1,
-    ('Patologias nas construções', 'Cicatriz de deslizamento'): 1/3,
-    ('Patologias nas construções', 'Outras evidências de instabilidade'): 1/3,
+    ('Patologias nas construções', 'Cicatriz de deslizamento'): 7,
+    ('Patologias nas construções', 'Outras evidências de instabilidade'): 5,
 
-    ('Cicatriz de deslizamento', 'Inclinação em árvores, postes e similares'): 5,
-    ('Cicatriz de deslizamento', 'Fendas / Trincas no terreno'): 1/5,
-    ('Cicatriz de deslizamento', 'Patologias nas construções'): 3,
+    ('Cicatriz de deslizamento', 'Inclinação em árvores, postes e similares'): 1/5,
+    ('Cicatriz de deslizamento', 'Fendas / Trincas no terreno'): 1/9,
+    ('Cicatriz de deslizamento', 'Patologias nas construções'): 1/7,
     ('Cicatriz de deslizamento', 'Cicatriz de deslizamento'): 1,
     ('Cicatriz de deslizamento', 'Outras evidências de instabilidade'): 1/3,
 
-    ('Outras evidências de instabilidade', 'Inclinação em árvores, postes e similares'): 3,
-    ('Outras evidências de instabilidade', 'Fendas / Trincas no terreno'): 1/3,
-    ('Outras evidências de instabilidade', 'Patologias nas construções'): 3,
+    ('Outras evidências de instabilidade', 'Inclinação em árvores, postes e similares'): 1/3,
+    ('Outras evidências de instabilidade', 'Fendas / Trincas no terreno'): 1/7,
+    ('Outras evidências de instabilidade', 'Patologias nas construções'): 1/5,
     ('Outras evidências de instabilidade', 'Cicatriz de deslizamento'): 3,
     ('Outras evidências de instabilidade', 'Outras evidências de instabilidade'): 1,
 
@@ -67,13 +65,13 @@ def debug_linhas(compare):
         print(f'  target_weight ahpy: {compare.target_weights[elemento_linha]:.3f}')
 
 
-C7 = ahpy.Compare(name='C7', comparisons=C15_comparisons, precision=3, random_index='saaty')
+C15 = ahpy.Compare(name='C15', comparisons=C15_comparisons, precision=3, random_index='saaty')
 
 print('TARGET WEIGHTS')
-print(C7.target_weights)
+print(C15.target_weights)
 
 print('\nCONSISTENCY RATIO')
-print(C7.consistency_ratio)
+print(C15.consistency_ratio)
 
-#debug_linhas(C7)
+#debug_linhas(C15)
 

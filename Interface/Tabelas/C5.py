@@ -1,6 +1,7 @@
 import ahpy
 
 
+
 C5_comparisons = {
 
     ('Sem ocorrências', 'Sem ocorrências'): 1,
@@ -17,12 +18,12 @@ C5_comparisons = {
 
 }
 
-C2 = ahpy.Compare(name='A', comparisons=C5_comparisons, precision=3, random_index='saaty')
+C5 = ahpy.Compare(name='C5', comparisons=C5_comparisons, precision=3, random_index='saaty')
 
-print(C2.target_weights)
-print(C2.consistency_ratio)
+print(C5.target_weights)
+print(C5.consistency_ratio)
 
-#report = C2.report(show=True)
+#report = C5.report(show=True)
 
 
 def debug_linhas(compare):
@@ -50,4 +51,4 @@ def debug_linhas(compare):
         print(f'  target_weight ahpy: {compare.target_weights[elemento_linha]:.3f}')
 
 
-#debug_linhas(C2)
+#debug_linhas(C5)

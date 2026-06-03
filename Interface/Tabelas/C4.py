@@ -1,51 +1,53 @@
 import ahpy
 
 
+
 C4_comparisons = {
 
     ('Via em Terra', 'Via em Terra'): 1,
-    ('Via em Terra', 'Via em Cascalho/Brita'): 1,
-    ('Via em Terra', 'Paralelepípedo'): 1/3,
-    ('Via em Terra', 'Pav. Concreto'): 1/9,
-    ('Via em Terra', 'Pav. Intertravado'): 1/5,
+    ('Via em Terra', 'Via em Cascalho/Brita'): 2,
+    ('Via em Terra', 'Paralelepípedo'): 2,
+    ('Via em Terra', 'Pav. Concreto'): 1/5,
+    ('Via em Terra', 'Pav. Intertravado'): 1/3,
     ('Via em Terra', 'Pav. Asfáltico'): 1/9,
 
-    ('Via em Cascalho/Brita', 'Via em Terra'): 1,
+    ('Via em Cascalho/Brita', 'Via em Terra'): 1/2,
     ('Via em Cascalho/Brita', 'Via em Cascalho/Brita'): 1,
-    ('Via em Cascalho/Brita', 'Paralelepípedo'): 1/5,
+    ('Via em Cascalho/Brita', 'Paralelepípedo'): 1/2,
     ('Via em Cascalho/Brita', 'Pav. Concreto'): 1/7,
     ('Via em Cascalho/Brita', 'Pav. Intertravado'): 1/3,
-    ('Via em Cascalho/Brita', 'Pav. Asfáltico'): 1/5,
+    ('Via em Cascalho/Brita', 'Pav. Asfáltico'): 1/7,
 
-    ('Paralelepípedo', 'Via em Terra'): 3,
-    ('Paralelepípedo', 'Via em Cascalho/Brita'): 5,
+    ('Paralelepípedo', 'Via em Terra'): 1/2,
+    ('Paralelepípedo', 'Via em Cascalho/Brita'): 2,
     ('Paralelepípedo', 'Paralelepípedo'): 1,
     ('Paralelepípedo', 'Pav. Concreto'): 1/5,
-    ('Paralelepípedo', 'Pav. Intertravado'): 1/3,
-    ('Paralelepípedo', 'Pav. Asfáltico'): 1/3,
+    ('Paralelepípedo', 'Pav. Intertravado'): 1,
+    ('Paralelepípedo', 'Pav. Asfáltico'): 1/5,
 
-    ('Pav. Concreto', 'Via em Terra'): 9,
+    ('Pav. Concreto', 'Via em Terra'): 5,
     ('Pav. Concreto', 'Via em Cascalho/Brita'): 7,
     ('Pav. Concreto', 'Paralelepípedo'): 5,
     ('Pav. Concreto', 'Pav. Concreto'): 1,
-    ('Pav. Concreto', 'Pav. Intertravado'): 1/5,
-    ('Pav. Concreto', 'Pav. Asfáltico'): 1/7,
+    ('Pav. Concreto', 'Pav. Intertravado'): 3,
+    ('Pav. Concreto', 'Pav. Asfáltico'): 1/5,
 
-    ('Pav. Intertravado', 'Via em Terra'): 5,
+    ('Pav. Intertravado', 'Via em Terra'): 3,
     ('Pav. Intertravado', 'Via em Cascalho/Brita'): 3,
-    ('Pav. Intertravado', 'Paralelepípedo'): 3,
-    ('Pav. Intertravado', 'Pav. Concreto'): 5,
+    ('Pav. Intertravado', 'Paralelepípedo'): 1,
+    ('Pav. Intertravado', 'Pav. Concreto'): 1/3,
     ('Pav. Intertravado', 'Pav. Intertravado'): 1,
     ('Pav. Intertravado', 'Pav. Asfáltico'): 1/3,
 
     ('Pav. Asfáltico', 'Via em Terra'): 9,
-    ('Pav. Asfáltico', 'Via em Cascalho/Brita'): 5,
-    ('Pav. Asfáltico', 'Paralelepípedo'): 3,
-    ('Pav. Asfáltico', 'Pav. Concreto'): 7,
+    ('Pav. Asfáltico', 'Via em Cascalho/Brita'): 7,
+    ('Pav. Asfáltico', 'Paralelepípedo'): 5,
+    ('Pav. Asfáltico', 'Pav. Concreto'): 5,
     ('Pav. Asfáltico', 'Pav. Intertravado'): 3,
     ('Pav. Asfáltico', 'Pav. Asfáltico'): 1,
 
 }
+
 C4 = ahpy.Compare(name='C4', comparisons=C4_comparisons, precision=3, random_index='saaty',iterations=100, tolerance=0.0001, cr=True)
 
 print(C4.target_weights)

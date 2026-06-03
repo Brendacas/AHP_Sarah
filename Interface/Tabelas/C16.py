@@ -9,15 +9,15 @@ import numpy as np
 C16_comparisons = {
 
     ('Escoamento', 'Escoamento'): 1,
-    ('Escoamento', 'Escorregamento'): 1/7,
-    ('Escoamento', 'Transporte'): 1/5,
+    ('Escoamento', 'Escorregamento'): 5,
+    ('Escoamento', 'Transporte'): 3,
 
-    ('Escorregamento', 'Escoamento'): 7,
+    ('Escorregamento', 'Escoamento'): 1/5,
     ('Escorregamento', 'Escorregamento'): 1,
-    ('Escorregamento', 'Transporte'): 5,
+    ('Escorregamento', 'Transporte'): 1/3,
 
-    ('Transporte', 'Escoamento'): 5,
-    ('Transporte', 'Escorregamento'): 1/5,
+    ('Transporte', 'Escoamento'): 1/3,
+    ('Transporte', 'Escorregamento'): 3,
     ('Transporte', 'Transporte'): 1,
 
 }
@@ -47,12 +47,12 @@ def debug_linhas(compare):
         print(f'  target_weight ahpy: {compare.target_weights[elemento_linha]:.3f}')
 
 
-C7 = ahpy.Compare(name='C7', comparisons=C16_comparisons, precision=3, random_index='saaty')
+C16 = ahpy.Compare(name='C16', comparisons=C16_comparisons, precision=3, random_index='saaty')
 
 print('TARGET WEIGHTS')
-print(C7.target_weights)
+print(C16.target_weights)
 
 print('\nCONSISTENCY RATIO')
-print(C7.consistency_ratio)
+print(C16.consistency_ratio)
 
-#debug_linhas(C7)
+#debug_linhas(C16)

@@ -1,12 +1,13 @@
 import ahpy
 
 
+
 C2_comparisons = {
 
     ('Alvenaria estrutural', 'Alvenaria estrutural'): 1,
-    ('Alvenaria estrutural', 'Madeira'): 9/1,
-    ('Alvenaria estrutural', 'Concreto'): 3/1,
-    ('Alvenaria estrutural', 'Mista'): 7/1,
+    ('Alvenaria estrutural', 'Madeira'): 9,
+    ('Alvenaria estrutural', 'Concreto'): 3,
+    ('Alvenaria estrutural', 'Mista'): 7,
 
     ('Madeira', 'Alvenaria estrutural'): 1/9,
     ('Madeira', 'Madeira'): 1,
@@ -14,18 +15,18 @@ C2_comparisons = {
     ('Madeira', 'Mista'): 1/3,
 
     ('Concreto', 'Alvenaria estrutural'): 1/3,
-    ('Concreto', 'Madeira'): 7/1,
+    ('Concreto', 'Madeira'): 7,
     ('Concreto', 'Concreto'): 1,
-    ('Concreto', 'Mista'): 7/1,
+    ('Concreto', 'Mista'): 7,
 
     ('Mista', 'Alvenaria estrutural'): 1/7,
-    ('Mista', 'Madeira'): 3/1,
+    ('Mista', 'Madeira'): 3,
     ('Mista', 'Concreto'): 1/7,
     ('Mista', 'Mista'): 1,
 
 }
 
-C2 = ahpy.Compare(name='A', comparisons=C2_comparisons, precision=3, random_index='saaty')
+C2 = ahpy.Compare(name='C2', comparisons=C2_comparisons, precision=3, random_index='saaty')
 
 print(C2.target_weights)
 print(C2.consistency_ratio)

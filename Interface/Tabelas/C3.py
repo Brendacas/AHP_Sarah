@@ -21,17 +21,18 @@ C3_comparisons = {
     ('Superior a 9 Níveis', '1 a 2 Níveis'): 7,
     ('Superior a 9 Níveis', '3 a 5 Níveis'): 5,
     ('Superior a 9 Níveis', '6 a 8 Níveis'): 3,
-    ('Superior a 9 Níveis', 'Superior a 9 Níveis'): 1
+    ('Superior a 9 Níveis', 'Superior a 9 Níveis'): 1,
 
 }
 
 
-C2 = ahpy.Compare(name='A', comparisons=C3_comparisons, precision=3, random_index='saaty')
 
-print(C2.target_weights)
-print(C2.consistency_ratio)
+C3 = ahpy.Compare(name='C3', comparisons=C3_comparisons, precision=3, random_index='saaty')
 
-report = C2.report(show=True)
+print(C3.target_weights)
+print(C3.consistency_ratio)
+
+report = C3.report(show=True)
 
 
 def debug_linhas(compare):
@@ -59,4 +60,4 @@ def debug_linhas(compare):
         print(f'  target_weight ahpy: {compare.target_weights[elemento_linha]:.3f}')
 
 
-debug_linhas(C2)
+debug_linhas(C3)

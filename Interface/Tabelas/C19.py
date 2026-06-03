@@ -3,20 +3,19 @@ import ahpy
 C19_comparisons = {
 
     ('Ausente / Solo exposto', 'Ausente / Solo exposto'): 1,
-    ('Ausente / Solo exposto', 'Presente Esparsada'): 5,
+    ('Ausente / Solo exposto', 'Presente Esparsada'): 3,
 
-    ('Presente Esparsada', 'Ausente / Solo exposto'): 1/5,
+    ('Presente Esparsada', 'Ausente / Solo exposto'): 1/3,
     ('Presente Esparsada', 'Presente Esparsada'): 1,
 
 }
 
+C19 = ahpy.Compare(name='C19', comparisons=C19_comparisons, precision=3, random_index='saaty')
 
-C18 = ahpy.Compare(name='Drinks', comparisons=C19_comparisons, precision=3, random_index='saaty')
-
-print(C18.target_weights)
+print(C19.target_weights)
 
 
-print(C18.consistency_ratio)
+print(C19.consistency_ratio)
 
 
 def debug_linhas(compare):
@@ -44,4 +43,4 @@ def debug_linhas(compare):
         print(f'  target_weight ahpy: {compare.target_weights[elemento_linha]:.3f}')
 
 
-debug_linhas(C18)
+debug_linhas(C19)

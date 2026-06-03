@@ -7,41 +7,30 @@ import numpy as np
 
 
 
-C8_comparisons = {
 
-    ('Aterro irregular', 'Aterro irregular'): 1,
-    ('Aterro irregular', 'Lixo / Resíduos Sólidos'): 1,
-    ('Aterro irregular', 'Entulho de construção'): 1,
-    ('Aterro irregular', 'Destroços de sistema de esgoto'): 1/9,
-    ('Aterro irregular', 'Destroços de sistema de drenagem'): 1/7,
+C8_2_comparisons = {
 
-    ('Lixo / Resíduos Sólidos', 'Aterro irregular'): 1,
-    ('Lixo / Resíduos Sólidos', 'Lixo / Resíduos Sólidos'): 1,
-    ('Lixo / Resíduos Sólidos', 'Entulho de construção'): 3,
-    ('Lixo / Resíduos Sólidos', 'Destroços de sistema de esgoto'): 1/5,
-    ('Lixo / Resíduos Sólidos', 'Destroços de sistema de drenagem'): 1/5,
+    ('Aterro irregular / Lixo', 'Aterro irregular / Lixo'): 1,
+    ('Aterro irregular / Lixo', 'Entulho de construção / Resíduos Sólidos'): 1,
+    ('Aterro irregular / Lixo', 'Destroços de sistema de esgoto'): 1/7,
+    ('Aterro irregular / Lixo', 'Destroços de sistema de drenagem'): 1/7,
 
-    ('Entulho de construção', 'Aterro irregular'): 1,
-    ('Entulho de construção', 'Lixo / Resíduos Sólidos'): 1/3,
-    ('Entulho de construção', 'Entulho de construção'): 1,
-    ('Entulho de construção', 'Destroços de sistema de esgoto'): 1/5,
-    ('Entulho de construção', 'Destroços de sistema de drenagem'): 1/5,
+    ('Entulho de construção / Resíduos Sólidos', 'Aterro irregular / Lixo'): 1,
+    ('Entulho de construção / Resíduos Sólidos', 'Entulho de construção / Resíduos Sólidos'): 1,
+    ('Entulho de construção / Resíduos Sólidos', 'Destroços de sistema de esgoto'): 1/5,
+    ('Entulho de construção / Resíduos Sólidos', 'Destroços de sistema de drenagem'): 1/5,
 
-    ('Destroços de sistema de esgoto', 'Aterro irregular'): 9,
-    ('Destroços de sistema de esgoto', 'Lixo / Resíduos Sólidos'): 5,
-    ('Destroços de sistema de esgoto', 'Entulho de construção'): 5,
+    ('Destroços de sistema de esgoto', 'Aterro irregular / Lixo'): 7,
+    ('Destroços de sistema de esgoto', 'Entulho de construção / Resíduos Sólidos'): 5,
     ('Destroços de sistema de esgoto', 'Destroços de sistema de esgoto'): 1,
     ('Destroços de sistema de esgoto', 'Destroços de sistema de drenagem'): 3,
 
-    ('Destroços de sistema de drenagem', 'Aterro irregular'): 7,
-    ('Destroços de sistema de drenagem', 'Lixo / Resíduos Sólidos'): 5,
-    ('Destroços de sistema de drenagem', 'Entulho de construção'): 5,
+    ('Destroços de sistema de drenagem', 'Aterro irregular / Lixo'): 7,
+    ('Destroços de sistema de drenagem', 'Entulho de construção / Resíduos Sólidos'): 5,
     ('Destroços de sistema de drenagem', 'Destroços de sistema de esgoto'): 1/3,
     ('Destroços de sistema de drenagem', 'Destroços de sistema de drenagem'): 1,
 
 }
-
-
 def debug_linhas(compare):
     elementos = compare._elements
     matriz = compare._matrix
@@ -67,12 +56,12 @@ def debug_linhas(compare):
         print(f'  target_weight ahpy: {compare.target_weights[elemento_linha]:.3f}')
 
 
-C8 = ahpy.Compare(name='C8', comparisons=C8_comparisons, precision=3, random_index='saaty')
+C8_2 = ahpy.Compare(name='C8_2', comparisons=C8_2_comparisons, precision=3, random_index='saaty')
 
 print('TARGET WEIGHTS')
-print(C8.target_weights)
+print(C8_2.target_weights)
 
 print('\nCONSISTENCY RATIO')
-print(C8.consistency_ratio)
+print(C8_2.consistency_ratio)
 
-#debug_linhas(C8)
+#debug_linhas(C8_2)

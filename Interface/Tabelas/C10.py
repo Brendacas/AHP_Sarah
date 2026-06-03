@@ -5,30 +5,30 @@ import numpy as np
 #local_weights: Prioridades relativas ao pai ou mãe imediato na hierarquia.
 #global_weights: Prioridades de critérios ou subcritérios relativos ao objetivo raiz.
 
-
 C10_comparisons = {
 
     ('até 2m do talude', 'até 2m do talude'): 1,
-    ('até 2m do talude', 'de 2m a 4m do talude'): 9,
+    ('até 2m do talude', 'de 2m a 4m do talude'): 5,
     ('até 2m do talude', 'de 5m a 10m do talude'): 7,
-    ('até 2m do talude', 'acima de 10m do talude'): 7,
+    ('até 2m do talude', 'acima de 10m do talude'): 9,
 
-    ('de 2m a 4m do talude', 'até 2m do talude'): 1/9,
+    ('de 2m a 4m do talude', 'até 2m do talude'): 1/5,
     ('de 2m a 4m do talude', 'de 2m a 4m do talude'): 1,
-    ('de 2m a 4m do talude', 'de 5m a 10m do talude'): 5,
+    ('de 2m a 4m do talude', 'de 5m a 10m do talude'): 3,
     ('de 2m a 4m do talude', 'acima de 10m do talude'): 5,
 
     ('de 5m a 10m do talude', 'até 2m do talude'): 1/7,
-    ('de 5m a 10m do talude', 'de 2m a 4m do talude'): 1/5,
+    ('de 5m a 10m do talude', 'de 2m a 4m do talude'): 1/3,
     ('de 5m a 10m do talude', 'de 5m a 10m do talude'): 1,
     ('de 5m a 10m do talude', 'acima de 10m do talude'): 3,
 
-    ('acima de 10m do talude', 'até 2m do talude'): 1/7,
+    ('acima de 10m do talude', 'até 2m do talude'): 1/9,
     ('acima de 10m do talude', 'de 2m a 4m do talude'): 1/5,
     ('acima de 10m do talude', 'de 5m a 10m do talude'): 1/3,
     ('acima de 10m do talude', 'acima de 10m do talude'): 1,
 
 }
+
 def debug_linhas(compare):
     elementos = compare._elements
     matriz = compare._matrix
@@ -54,12 +54,12 @@ def debug_linhas(compare):
         print(f'  target_weight ahpy: {compare.target_weights[elemento_linha]:.3f}')
 
 
-C7 = ahpy.Compare(name='C7', comparisons=C10_comparisons, precision=3, random_index='saaty')
+C10 = ahpy.Compare(name='C10', comparisons=C10_comparisons, precision=3, random_index='saaty')
 
 print('TARGET WEIGHTS')
-print(C7.target_weights)
+print(C10.target_weights)
 
 print('\nCONSISTENCY RATIO')
-print(C7.consistency_ratio)
+print(C10.consistency_ratio)
 
-#debug_linhas(C7)
+#debug_linhas(C10)

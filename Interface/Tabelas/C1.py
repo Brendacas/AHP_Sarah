@@ -34,8 +34,7 @@ C1_comparisons = {
     ('D ≥ 150 Hab/km²', 'D ≥ 150 Hab/km²'): 1,
 
 }
-
-compara = ahpy.Compare(name='A', comparisons=C1_comparisons, precision=3, random_index='saaty')
+C1 = ahpy.Compare(name='C1', comparisons=C1_comparisons, precision=3, random_index='saaty')
 
 
 
@@ -64,7 +63,7 @@ def debug_linhas(compare):
         print(f'  target_weight ahpy: {compare.target_weights[elemento_linha]:.3f}')
 
 
-debug_linhas(compara)
+debug_linhas(C1)
 
 print('\nCONSISTENCY RATIO')
-print(compara.consistency_ratio)
+print(C1.consistency_ratio)

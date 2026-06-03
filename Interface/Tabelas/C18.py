@@ -16,6 +16,7 @@ C18_comparisons = {
 
 }
 
+
 C18 = ahpy.Compare(name='Drinks', comparisons=C18_comparisons, precision=3, random_index='saaty')
 
 print(C18.target_weights)

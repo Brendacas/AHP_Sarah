@@ -10,7 +10,7 @@ C20_comparisons = {
     ('de grande profundidade (até 3m)', 'de grande profundidade (até 3m)'): 1,
 
 }
-compara = ahpy.Compare(name='A', comparisons=C20_comparisons, precision=3, random_index='saaty')
+C20 = ahpy.Compare(name='C20', comparisons=C20_comparisons, precision=3, random_index='saaty')
 
 def debug_linhas(compare):
     elementos = compare._elements
@@ -40,13 +40,13 @@ def debug_linhas(compare):
 
 
 print('TARGET WEIGHTS')
-print(compara.target_weights)
+print(C20.target_weights)
 
 print('\nCONSISTENCY RATIO')
-print(compara.consistency_ratio)
+print(C20.consistency_ratio)
 
-debug_linhas(compara)
+debug_linhas(C20)
 
 
 
-report = compara.report(show=True)
+report = C20.report(show=True)

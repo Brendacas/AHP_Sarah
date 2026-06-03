@@ -4,64 +4,63 @@ import ahpy
 C21_comparisons = {
 
     ('Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)', 'Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)'): 1,
-    ('Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)', 'Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)'): 7,
-    ('Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)', 'Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)'): 1/7,
+    ('Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)', 'Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)'): 5,
+    ('Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)', 'Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)'): 1/3,
     ('Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)', 'Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)'): 5,
-    ('Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)', 'Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)'): 1/5,
+    ('Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)', 'Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)'): 1/3,
     ('Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)', 'Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)'): 3,
-    ('Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)', 'Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)'): 1/5,
+    ('Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)', 'Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)'): 1/6,
 
-    ('Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)', 'Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)'): 1/7,
+    ('Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)', 'Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)'): 1/5,
     ('Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)', 'Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)'): 1,
-    ('Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)', 'Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)'): 1/5,
+    ('Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)', 'Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)'): 1/7,
     ('Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)', 'Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)'): 3,
     ('Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)', 'Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)'): 1/7,
-    ('Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)', 'Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)'): 1/3,
-    ('Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)', 'Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)'): 1/7,
+    ('Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)', 'Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)'): 1/4,
+    ('Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)', 'Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)'): 1/9,
 
-    ('Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)', 'Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)'): 7,
-    ('Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)', 'Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)'): 5,
+    ('Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)', 'Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)'): 3,
+    ('Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)', 'Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)'): 7,
     ('Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)', 'Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)'): 1,
-    ('Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)', 'Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)'): 5,
-    ('Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)', 'Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)'): 1/5,
-    ('Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)', 'Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)'): 3,
+    ('Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)', 'Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)'): 7,
+    ('Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)', 'Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)'): 1/2,
+    ('Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)', 'Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)'): 5,
     ('Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)', 'Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)'): 1/3,
 
     ('Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)', 'Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)'): 1/5,
     ('Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)', 'Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)'): 1/3,
-    ('Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)', 'Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)'): 1/5,
+    ('Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)', 'Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)'): 1/7,
     ('Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)', 'Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)'): 1,
-    ('Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)', 'Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)'): 1/3,
-    ('Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)', 'Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)'): 3,
-    ('Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)', 'Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)'): 1/5,
+    ('Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)', 'Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)'): 1/7,
+    ('Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)', 'Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)'): 1/3,
+    ('Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)', 'Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)'): 1/9,
 
-    ('Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)', 'Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)'): 5,
+    ('Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)', 'Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)'): 3,
     ('Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)', 'Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)'): 7,
-    ('Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)', 'Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)'): 5,
-    ('Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)', 'Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)'): 3,
+    ('Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)', 'Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)'): 2,
+    ('Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)', 'Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)'): 7,
     ('Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)', 'Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)'): 1,
-    ('Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)', 'Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)'): 5,
+    ('Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)', 'Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)'): 6,
     ('Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)', 'Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)'): 1/3,
 
     ('Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)', 'Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)'): 1/3,
-    ('Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)', 'Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)'): 3,
-    ('Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)', 'Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)'): 1/3,
-    ('Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)', 'Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)'): 1/3,
-    ('Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)', 'Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)'): 1/5,
+    ('Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)', 'Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)'): 4,
+    ('Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)', 'Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)'): 1/5,
+    ('Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)', 'Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)'): 3,
+    ('Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)', 'Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)'): 1/6,
     ('Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)', 'Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)'): 1,
     ('Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)', 'Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)'): 1/7,
 
-    ('Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)', 'Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)'): 5,
-    ('Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)', 'Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)'): 7,
+    ('Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)', 'Rasteira de raízes rasas (Ex.: Amendoim-forrageiro, Trevos)'): 6,
+    ('Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)', 'Rasteira de raízes densas (Ex.: Braquiária, Vetiver, Capim-elefante)'): 9,
     ('Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)', 'Arbustos de até 2m e raízes rasas (Ex: Buxinho, Pitósporo, Bérberis)'): 3,
-    ('Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)', 'Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)'): 5,
+    ('Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)', 'Arbustos de até 2m e raízes profundas (Ex: Pinheiro rasteiro, Eleagno, Espirradeira)'): 9,
     ('Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)', 'Árvores de raízes rasas (Ex: Bananeira, Palmeiras, Mangueiras)'): 3,
     ('Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)', 'Árvores de Raízes Profundas (Ex: Inguá, Aroeira, Jacarandá, Pata-de-vaca)'): 7,
     ('Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)', 'Vegetação de Solo Exposto (Ex: Cana, Mamão, Capim Colonião)'): 1,
 
 }
-
-compara = ahpy.Compare(name='A', comparisons=C21_comparisons, precision=3, random_index='saaty')
+C21 = ahpy.Compare(name='A', comparisons=C21_comparisons, precision=3, random_index='saaty')
 
 def debug_linhas(compare):
     elementos = compare._elements
@@ -91,13 +90,13 @@ def debug_linhas(compare):
 
 
 print('TARGET WEIGHTS')
-print(compara.target_weights)
+print(C21.target_weights)
 
 print('\nCONSISTENCY RATIO')
-print(compara.consistency_ratio)
+print(C21.consistency_ratio)
 
-debug_linhas(compara)
+debug_linhas(C21)
 
 
 
-report = compara.report(show=True)
+report = C21.report(show=True)

@@ -6,36 +6,37 @@ import numpy as np
 #global_weights: Prioridades de critérios ou subcritérios relativos ao objetivo raiz.
 
 
+
 C14_comparisons = {
 
     ('Material estável', 'Material estável'): 1,
     ('Material estável', 'Rocha alterada / Matacões'): 1/3,
-    ('Material estável', 'Solo Laterítico'): 3,
+    ('Material estável', 'Solo Laterítico'): 1/5,
     ('Material estável', 'Solos Transportados'): 1/7,
     ('Material estável', 'Material Predominantemente Orgânico'): 1/9,
 
     ('Rocha alterada / Matacões', 'Material estável'): 3,
     ('Rocha alterada / Matacões', 'Rocha alterada / Matacões'): 1,
     ('Rocha alterada / Matacões', 'Solo Laterítico'): 1/3,
-    ('Rocha alterada / Matacões', 'Solos Transportados'): 3,
-    ('Rocha alterada / Matacões', 'Material Predominantemente Orgânico'): 1/5,
+    ('Rocha alterada / Matacões', 'Solos Transportados'): 1/5,
+    ('Rocha alterada / Matacões', 'Material Predominantemente Orgânico'): 1/7,
 
-    ('Solo Laterítico', 'Material estável'): 1/3,
+    ('Solo Laterítico', 'Material estável'): 5,
     ('Solo Laterítico', 'Rocha alterada / Matacões'): 3,
     ('Solo Laterítico', 'Solo Laterítico'): 1,
     ('Solo Laterítico', 'Solos Transportados'): 1/3,
-    ('Solo Laterítico', 'Material Predominantemente Orgânico'): 1/7,
+    ('Solo Laterítico', 'Material Predominantemente Orgânico'): 1/5,
 
     ('Solos Transportados', 'Material estável'): 7,
-    ('Solos Transportados', 'Rocha alterada / Matacões'): 1/3,
+    ('Solos Transportados', 'Rocha alterada / Matacões'): 5,
     ('Solos Transportados', 'Solo Laterítico'): 3,
     ('Solos Transportados', 'Solos Transportados'): 1,
-    ('Solos Transportados', 'Material Predominantemente Orgânico'): 1/7,
+    ('Solos Transportados', 'Material Predominantemente Orgânico'): 1/3,
 
     ('Material Predominantemente Orgânico', 'Material estável'): 9,
-    ('Material Predominantemente Orgânico', 'Rocha alterada / Matacões'): 5,
-    ('Material Predominantemente Orgânico', 'Solo Laterítico'): 7,
-    ('Material Predominantemente Orgânico', 'Solos Transportados'): 7,
+    ('Material Predominantemente Orgânico', 'Rocha alterada / Matacões'): 7,
+    ('Material Predominantemente Orgânico', 'Solo Laterítico'): 5,
+    ('Material Predominantemente Orgânico', 'Solos Transportados'): 3,
     ('Material Predominantemente Orgânico', 'Material Predominantemente Orgânico'): 1,
 
 }
@@ -65,12 +66,12 @@ def debug_linhas(compare):
         print(f'  target_weight ahpy: {compare.target_weights[elemento_linha]:.3f}')
 
 
-C7 = ahpy.Compare(name='C7', comparisons=C14_comparisons, precision=3, random_index='saaty')
+C14 = ahpy.Compare(name='C14', comparisons=C14_comparisons, precision=3, random_index='saaty')
 
 print('TARGET WEIGHTS')
-print(C7.target_weights)
+print(C14.target_weights)
 
 print('\nCONSISTENCY RATIO')
-print(C7.consistency_ratio)
+print(C14.consistency_ratio)
 
-#debug_linhas(C7)
+#debug_linhas(C14)
